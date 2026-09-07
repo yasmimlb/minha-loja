@@ -1,14 +1,12 @@
-/* --- CONFIGURAÇÕES GERAIS --- */
 :root {
-    /* Paleta de Cores Pastéis */
-    --cor-principal: #C5B3E6; /* Lavanda suave */
-    --cor-secundaria: #FFBBD1; /* Rosa claro */
-    --cor-terciaria: #E7F1CD; /* Verde água suave */
-    --cor-texto: #5c5c5c;
-    --cor-fundo: #fefeff;
-    --cor-whatsapp: #25d366;
+    --cor-principal: #9B72CF;
+    --cor-principal-dark: #7B42BC;
+    --cor-secundaria: #FF85A1;
+    --cor-terciaria: #D4E09B;
+    --cor-texto: #4A4A4A;
+    --cor-fundo: #FAFAFC;
+    --cor-whatsapp: #25D366;
     
-    /* Fontes */
     --fonte-fofa: 'Comfortaa', cursive;
     --fonte-limpa: 'Poppins', sans-serif;
 }
@@ -23,105 +21,106 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: var(--fonte-limpa);
-    -webkit-font-smoothing: antialiased;
 }
 
 /* --- HEADER --- */
 .header_container {
-    background-color: var(--cor-principal);
-    background-image: linear-gradient(135deg, var(--cor-principal) 0%, #D8CEF6 100%);
+    background: linear-gradient(135deg, #A882DD 0%, #8352C5 100%);
     color: white;
-    padding: 60px 20px;
+    padding: 50px 20px 40px;
     text-align: center;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 15px rgba(131, 82, 197, 0.2);
 }
 
 .logo_content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 8px;
 }
 
 .loja_title {
     font-family: var(--fonte-fofa);
+    font-size: 2.2rem;
     font-weight: 700;
-    font-size: 2.5rem;
-    letter-spacing: -1px;
-}
-
-.sparkle {
-    font-size: 2rem;
-    opacity: 0.8;
 }
 
 .loja_desc {
-    font-family: var(--fonte-limpa);
-    font-weight: 300;
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: 0.95rem;
+    opacity: 0.95;
+    margin-bottom: 20px;
+}
+
+.social_header {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social_btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    transition: 0.2s;
+}
+
+.social_btn:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
 /* --- CATÁLOGO --- */
 .catalogo_container {
-    padding: 60px 20px;
-    max-width: 1200px;
+    padding: 40px 20px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
 }
 
 .catalogo_title {
     font-family: var(--fonte-fofa);
-    color: var(--cor-texto);
-    font-size: 2rem;
-    margin-bottom: 40px;
-    display: inline-block;
-    position: relative;
-}
-
-.catalogo_title::after {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 4px;
-    background-color: var(--cor-secundaria);
-    border-radius: 10px;
-    margin: 8px auto 0 auto;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
 }
 
 .catalogo {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
-/* --- CARTÃO DE PRODUTO --- */
+/* --- CARDS --- */
 .card {
     background: white;
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 18px;
+    padding: 18px;
     width: 280px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #f0f0f0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border: 1px solid #EFEFEF;
     display: flex;
     flex-direction: column;
     text-align: left;
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
 .card_img_wrapper {
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     position: relative;
 }
 
@@ -136,49 +135,47 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: var(--cor-terciaria);
-    color: #4c6c1c;
-    font-size: 11px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    font-size: 10px;
     font-weight: 700;
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 20px;
     text-transform: uppercase;
-    font-family: var(--fonte-limpa);
 }
 
 .card h3 {
     font-family: var(--fonte-fofa);
-    font-size: 1.3rem;
-    color: #333;
+    font-size: 1.2rem;
+    color: #2D2D2D;
     margin-bottom: 6px;
 }
 
 .card p {
-    font-size: 0.9rem;
-    color: #888;
+    font-size: 0.85rem;
+    color: #666;
     line-height: 1.4;
     margin-bottom: 15px;
 }
 
 .price_container {
-    margin-bottom: 15px;
     margin-top: auto;
+    margin-bottom: 12px;
 }
 
 .label_a_partir {
     display: block;
     font-size: 10px;
     text-transform: uppercase;
-    color: #b0b0b0;
-    letter-spacing: 1px;
-    margin-bottom: -2px;
+    color: #888;
+    font-weight: 600;
 }
 
 .preco {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    color: var(--cor-principal);
+    color: var(--cor-principal-dark);
     font-family: var(--fonte-fofa);
 }
 
@@ -187,49 +184,106 @@ body {
     background-color: var(--cor-whatsapp);
     color: white;
     text-decoration: none;
-    padding: 14px;
+    padding: 12px;
     border-radius: 10px;
     font-weight: 700;
     text-align: center;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    border: none;
-    font-family: var(--fonte-limpa);
+    font-size: 0.95rem;
+    transition: 0.2s;
 }
 
 .btn_whatsapp:hover {
     background-color: #1eb956;
 }
 
-/* --- FOOTER --- */
-.footer_loja {
-    background-color: #f8f8f8;
-    padding: 40px 20px;
-    text-align: center;
-    border-top: 1px solid #f0f0f0;
+/* --- PORTFÓLIO / REDES --- */
+.portfolio_section {
+    margin-top: 60px;
+    background: white;
+    padding: 35px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #EFEFEF;
 }
 
-.footer_loja p {
+.portfolio_section h2 {
+    font-family: var(--fonte-fofa);
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.portfolio_section p {
     font-size: 0.9rem;
-    color: #b0b0b0;
-    margin-bottom: 5px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.portfolio_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn_portfolio {
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.btn_portfolio.insta {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.btn_portfolio.tiktok {
+    background-color: #000000;
+}
+
+.btn_portfolio:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* --- WHATSAPP FLUTUANTE --- */
+.whats_float {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--cor-whatsapp);
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.whats_float:hover {
+    transform: scale(1.1);
+}
+
+/* --- FOOTER --- */
+.footer_loja {
+    margin-top: 50px;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
 }
 
 .footer_icons {
-    margin-top: 15px;
-    font-size: 1.5rem;
-    opacity: 0.5;
-}
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-    .loja_title {
-        font-size: 2rem;
-    }
-    
-    .card {
-        width: 100%;
-        max-width: 320px;
-    }
+    margin-top: 10px;
+    font-size: 1.2rem;
 }
