@@ -25,69 +25,18 @@
         </div>
         <p class="loja_desc">Photocards, Bottons, Canecas e Ecobags feitos com carinho!</p>
         
-        <!-- REDES SOCIAIS NO TOPO -->
         <div class="social_header">
             <a href="https://www.instagram.com/yasamim_l2/" target="_blank" class="social_btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <a href="https://tiktok.com/@seu_tiktok" target="_blank" class="social_btn"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="https://shopee.com.br" target="_blank" class="social_btn shopee_hdr"><i class="fa-solid fa-bag-shopping"></i> Shopee</a>
         </div>
     </header>
 
     <main class="catalogo_container">
         <h2 class="catalogo_title">Meus Produtos</h2>
-        <div class="catalogo">
+        
+        <!-- O JavaScript vai preencher os produtos automaticamente aqui dentro -->
+        <div class="catalogo" id="lista-produtos"></div>
 
-            <!-- Produto 1 -->
-            <div class="card">
-                <div class="card_img_wrapper">
-                    <img src="photocard.png" alt="Photocard Personalizado">
-                    <span class="tag_promo">Destaque</span>
-                </div>
-                <h3>Photocard Personalizado</h3>
-                <p>Plastificação premium durável e cores super vibrantes.</p>
-                <div class="price_container">
-                    <span class="label_a_partir">a partir de</span>
-                    <span class="preco">R$ 5,00</span>
-                </div>
-                <a href="https://wa.me/5546999180136?text=Olá!%20Vim%20pelo%20site%20e%20quero%20encomendar%20um%20Photocard!" target="_blank" class="btn_whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Encomendar
-                </a>
-            </div>
-
-            <!-- Produto 2 -->
-            <div class="card">
-                <div class="card_img_wrapper">
-                    <img src="botton.png" alt="Botton Personalizado">
-                </div>
-                <h3>Botton Personalizado</h3>
-                <p>Vários tamanhos ideais para sua mochila ou jaqueta.</p>
-                <div class="price_container">
-                    <span class="label_a_partir">unidade</span>
-                    <span class="preco">R$ 7,00</span>
-                </div>
-                <a href="https://wa.me/5546999180136?text=Olá!%20Vim%20pelo%20site%20e%20quero%20encomendar%20um%20Botton!" target="_blank" class="btn_whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Encomendar
-                </a>
-            </div>
-
-            <!-- Produto 3 -->
-            <div class="card">
-                <div class="card_img_wrapper">
-                    <img src="ecobag.png" alt="Ecobag DTF">
-                </div>
-                <h3>Ecobag / Caneca DTF</h3>
-                <p>Estampa personalizada em filme DTF de alta resistência.</p>
-                <div class="price_container">
-                    <span class="label_a_partir">item</span>
-                    <span class="preco">R$ 35,00</span>
-                </div>
-                <a href="https://wa.me/5546999180136?text=Olá!%20Vim%20pelo%20site%20e%20quero%20encomendar%20um%20mimo%20em%20DTF!" target="_blank" class="btn_whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Encomendar
-                </a>
-            </div>
-
-        </div>
-
-        <!-- SEÇÃO DE OUTROS TRABALHOS / REDES -->
         <section class="portfolio_section">
             <h2>✨ Veja mais trabalhos & Encomendas Reais</h2>
             <p>Postamos os bastidores das produções e fotos dos pedidos prontos todos os dias!</p>
@@ -95,15 +44,13 @@
                 <a href="https://www.instagram.com/yasamim_l2/" target="_blank" class="btn_portfolio insta">
                     <i class="fa-brands fa-instagram"></i> Ver Fotos no Instagram
                 </a>
-                <a href="https://tiktok.com/@seu_tiktok" target="_blank" class="btn_portfolio tiktok">
-                    <i class="fa-brands fa-tiktok"></i> Ver Vídeos no TikTok
+                <a href="https://shopee.com.br" target="_blank" class="btn_portfolio shopee">
+                    <i class="fa-solid fa-bag-shopping"></i> Loja na Shopee
                 </a>
             </div>
         </section>
-
     </main>
 
-    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5546999180136?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20os%20personalizados!" class="whats_float" target="_blank" title="Falar no WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -114,5 +61,98 @@
         <div class="footer_icons">🌸 🎀 🦋</div>
     </footer>
 
+    <!-- SCRIPT DE AUTOMAÇÃO DE PRODUTOS -->
+    <script>
+        const numeroWhatsApp = "5546999180136";
+
+        // PARA ADICIONAR OU REMOVER PRODUTOS, MEXA APENAS NESTA LISTA ABAIXO:
+        const meusProdutos = [
+            {
+                nome: "Photocard Personalizado",
+                descricao: "Plastificação premium durável e cores super vibrantes.",
+                preco: "R$ 5,00",
+                unidade: "a partir de",
+                imagem: "photocard.png",
+                destaque: true // Mostra a tag 'Destaque'
+            },
+            {
+                nome: "Botton Personalizado",
+                descricao: "Vários tamanhos ideais para sua mochila ou jaqueta.",
+                preco: "R$ 7,00",
+                unidade: "unidade",
+                imagem: "botton.png",
+                destaque: false
+            },
+            {
+                nome: "Ecobag",
+                descricao: "Estampa personalizada em filme DTF de alta resistência.",
+                preco: "R$ 35,00",
+                unidade: "item",
+                imagem: "ecobag.png",
+                destaque: false
+            }
+            /* PARA ADICIONAR UM NOVO PRODUTO, BASTA COPIAR E COLAR UM BLOCO COMO ESTE:
+            ,{
+                nome: "Novo Produto",
+                descricao: "Descrição do produto aqui.",
+                preco: "R$ 10,00",
+                unidade: "unidade",
+                imagem: "nome_da_imagem.png",
+                destaque: false
+            }
+            */
+
+            ,{
+                nome: "Imã de Geladeira",
+                descricao: "Descrição do produto aqui.",
+                preco: "R$ 10,00",
+                unidade: "unidade",
+                imagem: "ima.jpeg",
+                destaque: false
+            }
+            
+            ,{
+                nome: "Necessaire",
+                descricao: "Descrição do produto aqui.",
+                preco: "R$ 10,00",
+                unidade: "unidade",
+                imagem: "necessaire.png",
+                destaque: false
+            }
+            
+        ];
+
+        // Função que desenha os cards automaticamente no site
+        function carregarProdutos() {
+            const container = document.getElementById("lista-produtos");
+            container.innerHTML = "";
+
+            meusProdutos.forEach(prod => {
+                const mensagemWhats = encodeURIComponent(`Olá! Vim pelo site e quero encomendar: ${prod.nome}!`);
+                const linkWhats = `https://wa.me/${numeroWhatsApp}?text=${mensagemWhats}`;
+
+                const cardHtml = `
+                    <div class="card">
+                        <div class="card_img_wrapper">
+                            <img src="${prod.imagem}" alt="${prod.nome}">
+                            ${prod.destaque ? '<span class="tag_promo">Destaque</span>' : ''}
+                        </div>
+                        <h3>${prod.nome}</h3>
+                        <p>${prod.descricao}</p>
+                        <div class="price_container">
+                            <span class="label_a_partir">${prod.unidade}</span>
+                            <span class="preco">${prod.preco}</span>
+                        </div>
+                        <a href="${linkWhats}" target="_blank" class="btn_whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> Encomendar
+                        </a>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        carregarProdutos();
+    </script>
 </body>
 </html>

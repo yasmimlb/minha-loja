@@ -287,3 +287,12 @@ body {
     margin-top: 10px;
     font-size: 1.2rem;
 }
+
+/* Botão da Shopee */
+.btn_portfolio.shopee {
+    background-color: #EE4D2D;
+}
+
+.social_btn.shopee_hdr:hover {
+    background: #EE4D2D;
+}
