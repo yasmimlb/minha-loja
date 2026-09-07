@@ -1,0 +1,235 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    /* Paleta de Cores Pastéis */
+    --cor-principal: #C5B3E6; /* Lavanda suave */
+    --cor-secundaria: #FFBBD1; /* Rosa claro */
+    --cor-terciaria: #E7F1CD; /* Verde água suave */
+    --cor-texto: #5c5c5c;
+    --cor-fundo: #fefeff;
+    --cor-whatsapp: #25d366;
+    
+    /* Fontes */
+    --fonte-fofa: 'Comfortaa', cursive;
+    --fonte-limpa: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-limpa);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- HEADER --- */
+.header_container {
+    background-color: var(--cor-principal);
+    background-image: linear-gradient(135deg, var(--cor-principal) 0%, #D8CEF6 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.logo_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.loja_title {
+    font-family: var(--fonte-fofa);
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+}
+
+.sparkle {
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.loja_desc {
+    font-family: var(--fonte-limpa);
+    font-weight: 300;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* --- CATÁLOGO --- */
+.catalogo_container {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.catalogo_title {
+    font-family: var(--fonte-fofa);
+    color: var(--cor-texto);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    display: inline-block;
+    position: relative;
+}
+
+.catalogo_title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: var(--cor-secundaria);
+    border-radius: 10px;
+    margin: 8px auto 0 auto;
+}
+
+.catalogo {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* --- CARTÃO DE PRODUTO --- */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card_img_wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.tag_promo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--cor-terciaria);
+    color: #4c6c1c;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-family: var(--fonte-limpa);
+}
+
+.card h3 {
+    font-family: var(--fonte-fofa);
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.price_container {
+    margin-bottom: 15px;
+    margin-top: auto;
+}
+
+.label_a_partir {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #b0b0b0;
+    letter-spacing: 1px;
+    margin-bottom: -2px;
+}
+
+.preco {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-principal);
+    font-family: var(--fonte-fofa);
+}
+
+.btn_whatsapp {
+    display: block;
+    background-color: var(--cor-whatsapp);
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    border: none;
+    font-family: var(--fonte-limpa);
+}
+
+.btn_whatsapp:hover {
+    background-color: #1eb956;
+}
+
+/* --- FOOTER --- */
+.footer_loja {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+.footer_loja p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-bottom: 5px;
+}
+
+.footer_icons {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .loja_title {
+        font-size: 2rem;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
